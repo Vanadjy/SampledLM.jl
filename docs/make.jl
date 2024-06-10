@@ -1,26 +1,26 @@
-using JSOTemplate
+using SampledLM
 using Documenter
 
-DocMeta.setdocmeta!(JSOTemplate, :DocTestSetup, :(using JSOTemplate); recursive = true)
+DocMeta.setdocmeta!(SampledLM, :DocTestSetup, :(using SampledLM); recursive = true)
 
 makedocs(;
-  modules = [JSOTemplate],
+  modules = [SampledLM],
   doctest = true,
   linkcheck = false,
   strict = false,
-  authors = "Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors",
-  repo = "https://github.com/JuliaSmoothOptimizers/JSOTemplate.jl/blob/{commit}{path}#{line}",
-  sitename = "JSOTemplate.jl",
+  authors = "Valentin Dijon <valentin.dijon@polymtl.ca>, Youssef Diouane <youssef.diouane@pooymtl.ca> and Dominique Orban <dominique.orban@polymtl.ca>",
+  repo = "https://github.com/JuliaSmoothOptimizers/SampledLM.jl/blob/{commit}{path}#{line}",
+  sitename = "SampledLM.jl",
   format = Documenter.HTML(;
     prettyurls = get(ENV, "CI", "false") == "true",
-    canonical = "https://JuliaSmoothOptimizers.github.io/JSOTemplate.jl",
+    canonical = "https://JuliaSmoothOptimizers.github.io/SampledLM.jl",
     assets = ["assets/style.css"],
   ),
   pages = ["Home" => "index.md", "Reference" => "reference.md"],
 )
 
 deploydocs(;
-  repo = "github.com/JuliaSmoothOptimizers/JSOTemplate.jl",
+  repo = "github.com/JuliaSmoothOptimizers/SampledLM.jl",
   push_preview = true,
   devbranch = "main",
 )
