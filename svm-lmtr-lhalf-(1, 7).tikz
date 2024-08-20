@@ -1,0 +1,36 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{every axis legend/.append style={%
+cells={anchor=west}}
+}
+\usetikzlibrary{arrows}
+\tikzset{>=stealth'}
+
+\begin{document}
+\begin{tikzpicture}[]
+\begin{axis}[
+  enlargelimits = false,
+  axis on top,
+  colormap={wb}{gray(0cm)=(0); gray(1cm)=(1)},
+  colorbar,
+  xmin = 0.5,
+  xmax = 28.5,
+  ymin = 0.5,
+  ymax = 28.5
+]
+
+\addplot[
+  point meta min = -700,
+  point meta max = 700,
+  point meta = explicit,
+  matrix plot*,
+  mesh/cols = 28,
+  mesh/rows = 28
+] table[
+  meta = data
+] {tmp_10000000000003.dat};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
